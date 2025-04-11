@@ -5,5 +5,8 @@
 #include <stdlib.h>
 
 // Function prototypes
+void afficheCarte(); 
 
-#endif // ui_H
+
+#endif // ui_H 
+
