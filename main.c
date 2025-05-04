@@ -1,17 +1,19 @@
 #include <stdio.h>
 #include <limits.h>
 #include "src/affichage/partie.h"
+#include "src/systeme.h"
+
+
 
 int main()
 {
-    char* noms[4] = {"MeziFire", "Rayane", "Zbi", "Hmoa"};
-    int cartes[6] = {0, 1, 2, 3, 4, 5};
-    Gestionnaire* gestionnaire = nouveau_gestionnaire(80, 80, 2, 4, noms, 6);
-    gestionnaire->joueurs[1]->configuration[2] = 1;
-    afficher_joueurs(gestionnaire, 0, 0);
-    afficher_pioche(gestionnaire, "Ayoub", 5, 52, 0);
-    rafraichir_affichage(gestionnaire);
     
+    char* noms[5] = {"MeziFire", "Rayane", "Zbi", "Hmoa","////" };
+    Gestionnaire* gestionnaire = nouveau_gestionnaire(80, 50, 2, 5, noms, 6);
+    int* dimensions = afficher_joueurs(gestionnaire, 2, 1);
+    afficher_table(gestionnaire, 0, 0, dimensions[0], 20, dimensions[1]);
+    afficher_pioche(gestionnaire, "Rayane", 3, 55, 2);
+    rafraichir_affichage(gestionnaire);
     return 0;
 }
 

@@ -15,12 +15,12 @@ void afficher_texte(Gestionnaire* gestionnaire, char* texte, int x, int y)
 
 void rafraichir_affichage(Gestionnaire* gestionnaire)
 {
-    for (int x = 0; x < gestionnaire->dimensions[0]; x++)
+    for (int y = 0; y < gestionnaire->dimensions[1]; y++)
     {
-        for (int y = 0; y < gestionnaire->dimensions[1]; y++)
+        for (int x = 0; x < gestionnaire->dimensions[0]; x++)
         {
-            printf("%c", gestionnaire->caracteres[y][x]);
+            printf("%c", gestionnaire->caracteres[x][y]);
         }
-        printf("\n");
+        printf("|%d\n", y);
     }
 }

@@ -20,6 +20,7 @@ Gestionnaire* nouveau_gestionnaire(int dimension_x, int dimension_y, int longeur
             caracteres[i][j] = ' ';
     }
     gestionnaire->caracteres = caracteres;
+    
     Joueur** joueurs = malloc(sizeof(Joueur) * nb_joueurs);
     for (int i = 0; i < nb_joueurs; i++)
     {
@@ -31,4 +32,5 @@ Gestionnaire* nouveau_gestionnaire(int dimension_x, int dimension_y, int longeur
     gestionnaire->joueurs = joueurs;
     return gestionnaire;
 }
+
 

@@ -41,6 +41,16 @@ int pioche_vide(Pioche pioche)
     return (pioche->contenu[0] == INT_MAX) ? 1 : 0;
 }
 
+/*
+<=>  
+if (pioche->contenu[0] == INT_MAX)
+{
+    return 1; 
+} else {
+    return 0;
+}
+*/
+
 
 int piocher_carte(Pioche pioche)
 {
