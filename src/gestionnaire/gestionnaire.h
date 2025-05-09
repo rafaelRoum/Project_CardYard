@@ -1,15 +1,21 @@
 #include "../joueur/joueur.h"
+#include "../systeme/systeme.h"
 
 
 typedef struct Gestionnaire
 {  
     char** caracteres; // Disposition des caractère affichés à l'écran
+    int** couleurs;    // Couleurs associées
     int dimensions[2]; // Dimensions de l'espace alloué aux graphismes (en terme de caractères)
     int longeur_max;   // Longeur maximale d'un nombre au sein d'une carte
     int nb_joueurs;    // Nombre de joueurs
     Joueur** joueurs;  // Liste des joueurs
     int nb_cartes;     // Nombre de cartes par joueur
+    int tour;          
+    int selection;       
 } Gestionnaire;
 
 // Prototypes
 Gestionnaire* nouveau_gestionnaire(int dimension_x, int dimension_y, int longeur_max, int nb_joueurs, char** noms_joueurs, int nb_cartes);
+char* gerer_clavier(Gestionnaire* gestionnaire);
+void vider_affichage(Gestionnaire* gestionnaire, int dimension_x, int dimension_y);

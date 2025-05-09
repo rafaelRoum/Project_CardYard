@@ -7,6 +7,12 @@ void afficher_caractere(Gestionnaire* gestionnaire, char caractere, int x, int y
     gestionnaire->caracteres[x][y] = caractere;
 }
 
+
+void colorer_emplacement(Gestionnaire* gestionnaire, int couleur_texte, int x, int y)
+{
+    gestionnaire->couleurs[x][y] = couleur_texte;
+}
+
 void afficher_texte(Gestionnaire* gestionnaire, char* texte, int x, int y)
 {
     for (int i = 0; i < strlen(texte); i++)
@@ -19,8 +25,8 @@ void rafraichir_affichage(Gestionnaire* gestionnaire)
     {
         for (int x = 0; x < gestionnaire->dimensions[0]; x++)
         {
-            printf("%c", gestionnaire->caracteres[x][y]);
+            afficher_caractere_colore(gestionnaire->caracteres[x][y], gestionnaire->couleurs[x][y]);
         }
-        printf("|%d\n", y);
+        printf("\n");
     }
 }

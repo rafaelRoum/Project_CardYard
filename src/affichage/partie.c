@@ -52,6 +52,12 @@ void afficher_table(Gestionnaire* gestionnaire, int x, int y, int longeur1, int 
         afficher_caractere(gestionnaire, '|', x + longeur1 + 1, y + i);
         afficher_caractere(gestionnaire, '|', x + longeur1 + longeur2 + 2, y + i);
     }
+}
 
-    
+void afficher_pioches(Gestionnaire* gestionnaire, int x, int y)
+{
+    for (int i = 0; i < gestionnaire->nb_joueurs; i++)
+    {
+        afficher_pioche(gestionnaire, gestionnaire->joueurs[i]->nom, 0, x, y + 4 * i);
+    }
 }

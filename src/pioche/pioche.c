@@ -54,11 +54,6 @@ if (pioche->contenu[0] == INT_MAX)
 
 int piocher_carte(Pioche pioche)
 {
-    if (pioche_vide(pioche)) 
-    {
-        fprintf(stderr, "Vous ne pouvez pas piocher dans une pioche vide.\n");
-        exit(EXIT_FAILURE);
-    }
     for (int i = 0; i < pioche->taille; i++)
     {
         if (pioche->contenu[i] == INT_MAX)

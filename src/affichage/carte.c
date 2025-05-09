@@ -30,12 +30,30 @@ void afficher_joueur(Gestionnaire* gestionnaire, Joueur* joueur, int x, int y)
     afficher_texte(gestionnaire, joueur->nom, x + espacement + 1, y);
     afficher_caractere(gestionnaire, ']', x + espacement + strlen(joueur->nom) + 1, y);
 
+    if (joueur->id == gestionnaire->tour)
+    {
+        for (int i = 0; i < (gestionnaire->longeur_max + 2) * 3; i++)
+        {
+            colorer_emplacement(gestionnaire, COULEUR_BLEU_CLAIR, x + i, y);
+        }
+    }
+
     for (int i = 0; i < joueur->nb_cartes; i++)
     {
         int colonne = i % 3;
         int ligne = i / 3;
         int affichage = (joueur->configuration[i] == 1) ? joueur->cartes[i] : INT_MAX;
-        afficher_carte(gestionnaire, affichage, x + colonne * (3 + gestionnaire->longeur_max), y + ligne * 3 + 1);
+        int origine_x = x + colonne * (3 + gestionnaire->longeur_max);
+        int origine_y = y + ligne * 3 + 1;
+        afficher_carte(gestionnaire, affichage, origine_x, origine_y);
+        if (gestionnaire->selection == i && joueur->id == gestionnaire->tour)
+        {
+            for (int i = 0; i < gestionnaire->longeur_max + 2; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                    colorer_emplacement(gestionnaire, COULEUR_ROUGE, origine_x + i, origine_y + j);
+            }
+        }
     }
 }
 

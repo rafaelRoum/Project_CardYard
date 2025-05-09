@@ -16,10 +16,9 @@ typedef struct Joueur
     int nb_cartes;
     Pioche defausse; 
     int score;
+    int id;
     char* nom;
 } Joueur;
 
 // Prototypes
-Joueur* nouveau_joueur(char* nom, int nb_cartes, int* cartes);
-
-
+Joueur* nouveau_joueur(char* nom, int nb_cartes, int* cartes, int id);
