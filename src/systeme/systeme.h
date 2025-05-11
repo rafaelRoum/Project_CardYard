@@ -1,17 +1,19 @@
 #ifndef SYSTEME_H
 #define SYSTEME_H
+
 #include <stdlib.h>
+
 #ifdef _WIN32
 #include <windows.h>
 
-// Déclarations de fonctions
+// Fonctions pour Windows
 char* attendre_touche();
 void afficher_caractere_colore(char c, int couleur);
 void vider_console();
 void dimensions_terminal(int* lignes, int* colonnes);
 void afficher_texte_colore(char* texte, int couleur);
 
-// Codes couleur texte Windows
+// Couleurs pour Windows (SetConsoleTextAttribute)
 #define COULEUR_NOIR         0
 #define COULEUR_BLEU         1
 #define COULEUR_VERT         2
@@ -32,14 +34,14 @@ void afficher_texte_colore(char* texte, int couleur);
 #else
 #include <stdio.h>
 
-// Déclarations de fonctions
+// Fonctions pour Linux / Unix
 char* attendre_touche();
 void afficher_caractere_colore(char c, int couleur);
 void vider_console();
 void dimensions_terminal(int* lignes, int* colonnes);
 void afficher_texte_colore(const char* texte, int couleur);
 
-// Codes ANSI pour les couleurs Linux
+// Couleurs ANSI pour le terminal Linux
 #define COULEUR_NOIR         30
 #define COULEUR_ROUGE        31
 #define COULEUR_VERT         32
@@ -48,7 +50,6 @@ void afficher_texte_colore(const char* texte, int couleur);
 #define COULEUR_MAGENTA      35
 #define COULEUR_CYAN         36
 #define COULEUR_BLANC        37
-// Couleurs "vives" (utilisables avec séquences ANSI)
 #define COULEUR_NOIR_CLAIR   90
 #define COULEUR_ROUGE_CLAIR  91
 #define COULEUR_VERT_CLAIR   92
@@ -61,6 +62,6 @@ void afficher_texte_colore(const char* texte, int couleur);
 #define COULEUR_ROSE_CLAIR   200
 #define COULEUR_MARRON       31
 
-#endif // _WIN32
+#endif
 
 #endif // SYSTEME_H

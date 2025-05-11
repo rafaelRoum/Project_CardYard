@@ -43,24 +43,29 @@ void afficher_fin(Gestionnaire* gestionnaire, int x, int y) {
     afficher_texte(gestionnaire, " ||    Pressez ESPACE pour quitter    ||", x, y + 14);
     afficher_texte(gestionnaire, " ||                                   ||", x, y + 15);
     afficher_texte(gestionnaire, "  #-----------------------------------#", x, y + 16);
-    int score_min = INT_MAX; 
-    char* nom;
 
-    for (int i = 0; i < gestionnaire->nb_joueurs; i++)
+    int score_min = INT_MAX;         // Initialise le score minimal à la valeur maximale possible (pour comparaison)
+    char* nom;                       // Pointeur vers le nom du joueur ayant le plus petit score (le gagnant)
+
+    for (int i = 0; i < gestionnaire->nb_joueurs; i++) // Boucle sur tous les joueurs
     {
-        int score = 0;
-        for (int j = 0; j < gestionnaire->nb_cartes; j++)
+        int score = 0;                             // Initialisation du score du joueur courant
+
+        for (int j = 0; j < gestionnaire->nb_cartes; j++) // Additionne toutes les cartes du joueur
         {
             score = score + gestionnaire->joueurs[i]->cartes[j];
         }
-        if (score < score_min)
+
+        if (score < score_min)                     // Si ce score est plus bas que le précédent minimum
         {
-            score_min = score;
-            nom = gestionnaire->joueurs[i]->nom;
+            score_min = score;                     // On le garde comme nouveau score minimal
+            nom = gestionnaire->joueurs[i]->nom;   // Et on retient le nom du joueur correspondant
         }
-        char score_texte[100];
-        sprintf(score_texte, "%s (%d)",  gestionnaire->joueurs[i]->nom, score);
-        afficher_texte(gestionnaire, score_texte, x + 10, y + i + 5);
-        afficher_texte(gestionnaire, nom, x + 20, y + 3);
+
+        char score_texte[100];                     // Chaîne pour stocker l'affichage du score
+        sprintf(score_texte, "%s (%d)",  gestionnaire->joueurs[i]->nom, score); // Format : "Nom (Score)"
+
+        afficher_texte(gestionnaire, score_texte, x + 10, y + i + 5); // Affiche le score dans le tableau des scores
+        afficher_texte(gestionnaire, nom, x + 20, y + 3);             // Affiche (à chaque itération) le nom du joueur gagnant
     }
 }
