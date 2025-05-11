@@ -81,7 +81,7 @@ char* attendre_touche() {
         if (getchar() == 91) {
             switch (getchar()) {
                 case 'C': strcpy(touche, "DROITE"); break;
-                case 'D': strcpy(touche, "GAUCHE"); break;
+                case 'D': strcpy(touche, "GAUCHE"); break;               
                 default: strcpy(touche, "INCONNU"); break;
             }
         } else {
