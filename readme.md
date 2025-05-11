@@ -14,10 +14,8 @@ Le répertoire contient les fichiers suivants :
 
 ## 🛠️ Installation
 Pour installer et exécuter ce projet, suivez ces étapes :
-Clonez le dépôt : git clone [https://github.com/rafaelRoum/project_CardYard.git](https://github.com/rafaelRoum/Project_CardYard.git)
-
-Allez dans le répertoire du projet :
-cd ./chemin/vers/CardYard
+- Clonez le dépôt : git clone [https://github.com/rafaelRoum/project_CardYard.git](https://github.com/rafaelRoum/Project_CardYard.git)
+- Allez dans le répertoire du projet : cd ./chemin/vers/CardYard
 
 ## Lancer avec les commandes : (LINUX)
 
