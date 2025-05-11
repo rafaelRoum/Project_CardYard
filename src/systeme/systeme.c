@@ -15,8 +15,6 @@ char* attendre_touche() {
     if (c == 0 || c == 224) {
         int special = _getch();
         switch (special) {
-            case 72: strcpy(touche, "HAUT"); break;
-            case 80: strcpy(touche, "BAS"); break;
             case 75: strcpy(touche, "GAUCHE"); break;
             case 77: strcpy(touche, "DROITE"); break;
             default: strcpy(touche, "INCONNU"); break;
