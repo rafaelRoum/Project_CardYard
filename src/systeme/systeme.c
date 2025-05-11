@@ -82,8 +82,6 @@ char* attendre_touche() {
     if (c == 27) {
         if (getchar() == 91) {
             switch (getchar()) {
-                case 'A': strcpy(touche, "HAUT"); break;
-                case 'B': strcpy(touche, "BAS"); break;
                 case 'C': strcpy(touche, "DROITE"); break;
                 case 'D': strcpy(touche, "GAUCHE"); break;
                 default: strcpy(touche, "INCONNU"); break;
