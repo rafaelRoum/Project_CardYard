@@ -5,7 +5,7 @@
 #include "gestionnaire.h"
 #include "../donnees/cartes_config.h"
 
-// Mélange un tableau d'entiers avec l'algo de Fisher–Yates
+// Mélange un tableau d'entiers avec un algo de tri
 void melanger(int *tableau, int taille) {
     for (int i = taille - 1; i > 0; i--) {
         int j = rand() % (i + 1);
@@ -15,7 +15,7 @@ void melanger(int *tableau, int taille) {
     }
 }
 
-// Crée un gestionnaire de jeu complet (joueurs + pioche + affichage)
+// Création du gestionnaire
 Gestionnaire* nouveau_gestionnaire(int dimension_x, int dimension_y, int longeur_max, int nb_joueurs, char** noms_joueurs, int nb_cartes)
 {
     Gestionnaire* gestionnaire = malloc(sizeof(Gestionnaire));

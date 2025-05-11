@@ -1,19 +1,16 @@
-🎴 CardYard Project
+## 🎴 CardYard Project
 Ce projet consiste à développer un jeu de société numérique basé sur des cartes, entièrement codé en langage C. L’objectif est de proposer une expérience interactive et éducative, tout en mettant en pratique les concepts de modularité, de gestion de ressources et de manipulation de fichiers pour les sauvegardes.
-
-Le projet utilise des interfaces en console pour l’affichage des menus et du plateau de jeu, conformément aux designs fournis (designmenu.txt et design_jeux.txt).
+Le projet utilise des interfaces en console pour l’affichage des menus et du plateau de jeu, conformément aux designs fournis (design.txt)
 
 ## 📁 Contenu du Projet
 Le répertoire contient les fichiers suivants :
 
 README.md : Le fichier que vous êtes en train de lire.
-
 design.txt : Ce a quoi doit ressembler l'affichage
-src/ : Fichiers sources en C.
+src/ : Fichiers sources du projet.
 main.c : fonction principale du programme
-Makefile :
-
-
+Makefile : Permet de compiler et de lancer le programme sous linux
+run.bat : Permet de compiler et de lancer le programme sous windows
 
 
 ## 🛠️ Installation
@@ -38,29 +35,8 @@ Execute le programme
 ### run
 Execute le programme grace au run.bat
 
-🎮 Utilisation
-Lancez l’exécutable pour démarrer le jeu :
-
-bash
-Copier
-Modifier
-./cardyard
-📋 Options du Menu
-bash
-Copier
-Modifier
-##------------------------------##
-|#             *Menu*           #|
-||                              ||
-||          > Reprendre        ||
-||           Sauvegarder       ||
-||             Charger         ||
-||              Aide           ||
-||             Credits         ||
-|#                              #|
-##------------------------------##
 ## 📐 Exemple d’Affichage du Plateau
-#---------------------------------------------------#--------------------# #-------------#
+#---------------------------------------------------#--------------------# #-------------#                                                                                             
 |   [Joueur 1]       [Joueur 2]       [Joueur 3]    |  [Joueur 1]        | |  SELECTION  |
 | #--# #--# #--#   #--# #--# #--#   #--# #--# #--#  |                    | |   >  5      |
 | | 0| | 0| | 8|   | 7| | 4| |11|   | 0| | 5| | 8|  |                    | #-------------#
@@ -133,7 +109,7 @@ Modifier
  \______/ \_______/|__/      \_______/          |__/ \_______/|__/      \_______/  
 
                             
-                            Pressez ENTER pour Jouer !    
+  Pressez ENTER pour Jouer !    
 
  #-------------------------#
 ||          MENU           ||
@@ -145,10 +121,9 @@ Modifier
 ||                         ||
  #-------------------------# 
 
-#📖 Documentation
-La documentation est intégrée au code à l’aide de commentaires détaillés pour faciliter la lecture et la compréhension des différentes fonctionnalités.
 
 ## 👥 Auteurs
+
 Rafael Roumiantsev
 
 Michel Kamal
