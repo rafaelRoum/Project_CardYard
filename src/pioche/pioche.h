@@ -18,3 +18,4 @@ void ajouter_carte(Pioche pioche, int carte);
 void debug_pioche(Pioche pioche);
 int piocher_carte(Pioche pioche);
 int pioche_vide(Pioche pioche);
+int carte_dessus(Pioche pioche);

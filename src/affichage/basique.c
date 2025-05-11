@@ -7,7 +7,6 @@ void afficher_caractere(Gestionnaire* gestionnaire, char caractere, int x, int y
     gestionnaire->caracteres[x][y] = caractere;
 }
 
-
 void colorer_emplacement(Gestionnaire* gestionnaire, int couleur_texte, int x, int y)
 {
     gestionnaire->couleurs[x][y] = couleur_texte;

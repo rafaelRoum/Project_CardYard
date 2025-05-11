@@ -64,3 +64,16 @@ int piocher_carte(Pioche pioche)
         }
     }
 }
+
+int carte_dessus(Pioche pioche)
+{
+    for (int i = 0; i < pioche->taille; i++)
+    {
+        if (pioche->contenu[i] == INT_MAX)
+        {
+            int carte = pioche->contenu[i-1];
+            return carte;
+        }
+    }
+}
+

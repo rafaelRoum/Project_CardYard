@@ -18,6 +18,7 @@ typedef struct Joueur
     int score;
     int id;
     char* nom;
+    int dernier_coup;
 } Joueur;
 
 // Prototypes

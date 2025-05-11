@@ -39,7 +39,6 @@ char attendre_touche() {
 }
 
 void afficher_caractere_colore(char c, int couleur) {
-    // Code ANSI pour les couleurs
     printf("\033[38;5;%dm%c\033[0m", couleur, c);
 }
 

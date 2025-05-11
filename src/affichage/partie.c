@@ -1,6 +1,15 @@
 #include "partie.h"
 #include <stdlib.h>
 #include <math.h>
+#include <limits.h>
+#include <string.h>
+
+int longueur_nombre(int nombre) {
+    char str[100]; 
+    sprintf(str, "%d", nombre);
+    return strlen(str);
+}
+
 
 int* afficher_joueurs(Gestionnaire* gestionnaire, int x, int y)
 {
@@ -51,13 +60,50 @@ void afficher_table(Gestionnaire* gestionnaire, int x, int y, int longeur1, int 
         afficher_caractere(gestionnaire, '|', x, y + i);
         afficher_caractere(gestionnaire, '|', x + longeur1 + 1, y + i);
         afficher_caractere(gestionnaire, '|', x + longeur1 + longeur2 + 2, y + i);
+        afficher_caractere(gestionnaire, '|', x - 1, y + i);
+        afficher_caractere(gestionnaire, '|', x + longeur1 + longeur2 + 3, y + i);
     }
 }
 
 void afficher_pioches(Gestionnaire* gestionnaire, int x, int y)
 {
+    int compteur = -1;
+
     for (int i = 0; i < gestionnaire->nb_joueurs; i++)
     {
-        afficher_pioche(gestionnaire, gestionnaire->joueurs[i]->nom, 0, x, y + 4 * i);
+        int afficher = (pioche_vide(gestionnaire->joueurs[i]->defausse)) ? 0 : 1;
+        int valeur = 0;
+        if (afficher)
+        {
+            valeur = carte_dessus(gestionnaire->joueurs[i]->defausse);
+            compteur++;
+        }
+        afficher_pioche(gestionnaire, gestionnaire->joueurs[i]->nom, valeur, x, y + 4 * i, afficher, (compteur == gestionnaire->selection && gestionnaire->mode == 0 && afficher) ? 1 : 0);
+        if (afficher && compteur == gestionnaire->selection)
+        {
+            gestionnaire->temp_choix = valeur;
+            gestionnaire->selection_alt = i;
+        }
+       
     }
+    int afficher = (pioche_vide(gestionnaire->pioche_centrale)) ? 0 : 1;
+    afficher_pioche(gestionnaire, "Pioche", INT_MAX, x, y + 4 * gestionnaire->nb_joueurs, afficher, (gestionnaire->selection == defausses_disponibles(gestionnaire) - 1 && gestionnaire->mode == 0) ? 1 : 0);
+    if (afficher && gestionnaire->selection == defausses_disponibles(gestionnaire) - 1)
+    {
+        gestionnaire->temp_choix = carte_dessus(gestionnaire->pioche_centrale);
+        gestionnaire->selection_alt = INT_MAX;
+    }
+}
+
+void afficher_selection(Gestionnaire* gestionnaire, int nombre, int x, int y)
+{
+    afficher_texte(gestionnaire, "#-------------#", x, y);
+    afficher_texte(gestionnaire, "||  SELECTION  ||", x - 1, y + 1);
+    char ligne_nombre[50];
+    if (longueur_nombre(nombre) == 1)
+        sprintf(ligne_nombre,        "||    > %d      ||", nombre); 
+    else
+        sprintf(ligne_nombre,        "||    > %d     ||", nombre); 
+    afficher_texte(gestionnaire, ligne_nombre, x - 1, y + 2);
+    afficher_texte(gestionnaire, "#-------------#", x, y + 3);
 }

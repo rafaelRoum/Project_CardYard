@@ -12,10 +12,19 @@ typedef struct Gestionnaire
     Joueur** joueurs;  // Liste des joueurs
     int nb_cartes;     // Nombre de cartes par joueur
     int tour;          
-    int selection;       
+    int selection;   
+    int mode;
+    int etat;
+    int choix;
+    int temp_choix;
+    int selection_alt;
+    int selection_menu;
+    int fin_jeu;
+    Pioche pioche_centrale;
 } Gestionnaire;
 
 // Prototypes
 Gestionnaire* nouveau_gestionnaire(int dimension_x, int dimension_y, int longeur_max, int nb_joueurs, char** noms_joueurs, int nb_cartes);
 char* gerer_clavier(Gestionnaire* gestionnaire);
 void vider_affichage(Gestionnaire* gestionnaire, int dimension_x, int dimension_y);
+void rendre_cartes_visibles(Gestionnaire* gestionnaire);

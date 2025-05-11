@@ -8,6 +8,8 @@
 char* attendre_touche();
 void afficher_caractere_colore(char c, int couleur);
 void vider_console();
+void dimensions_terminal(int* lignes, int* colonnes);
+void afficher_texte_colore(char* texte, int couleur);
 
 // Codes couleur texte Windows
 #define COULEUR_NOIR         0
@@ -34,6 +36,8 @@ void vider_console();
 char* attendre_touche();
 void afficher_caractere_colore(char c, int couleur);
 void vider_console();
+void dimensions_terminal(int* lignes, int* colonnes);
+void afficher_texte_colore(const char* texte, int couleur);
 
 // Codes ANSI pour les couleurs Linux
 #define COULEUR_NOIR         30
@@ -53,6 +57,9 @@ void vider_console();
 #define COULEUR_MAGENTA_CLAIR 95
 #define COULEUR_CYAN_CLAIR   96
 #define COULEUR_BLANC_CLAIR  97
+#define COULEUR_GRIS         37
+#define COULEUR_ROSE_CLAIR   200
+#define COULEUR_MARRON       31
 
 #endif // _WIN32
 
