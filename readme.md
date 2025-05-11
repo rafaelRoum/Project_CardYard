@@ -36,7 +36,7 @@ Execute le programme
 Execute le programme grace au run.bat
 
 ## 📐 Exemple d’Affichage du Plateau
-voir design.txt
+voir [design.txt](https://github.com/rafaelRoum/Project_CardYard/blob/main/design)
 
 ## 👥 Auteurs
 
